@@ -2,18 +2,18 @@
 
 　人人人人人人人人人人人人人人人人人人人人人人人人
 ＜　　　　　　　　　　　　　　　　　　　　　　　　＞
-＜　清大材料22級首家機械性質作圖軟體上線啦！！！　＞
+＜　清大材料系22級首家機械性質作圖軟體上線啦！！！　＞
 ＜　　　　　　　　　　　　　　　　　　　　　　　　＞
 　ＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶＶ
 
-<ver2.1>
+<ver2.2>
 
--新增True stress-strain 與 engineering stress-strain 的superposition
--更新XY軸的單位(Mpa / %)
+-同步上下兩圖之UTS數值
+-將圖例放至右下角
 
 
 【下載】
-    #暫不開放MAC下載#
+    #只開放Windows下載#
 ->按中右的綠色按鈕(Code)
 ->點選Download ZIP
 ->ZIP解壓縮

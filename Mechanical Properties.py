@@ -160,9 +160,9 @@ if __name__ == '__main__':
 
     plt.legend(handles=[l1_1, l1_2], labels=['engineering-\n'
                                              'stress-strain',
-                                             'elastic slope'], loc='upper left')
+                                             'elastic slope'], loc='lower right')
 
-    plt.text(FTP_strain + 5, eng_UTS_stress, 'elastic region : A\n'
+    plt.text(FTP_strain + FTP_strain/8, eng_UTS_stress, 'elastic region : A\n'
                         'plastic region : \nA+B+C\n'
                         'necking region : C\n'
                         'uniform elongation \nregion : A+B',
@@ -183,12 +183,11 @@ if __name__ == '__main__':
         real_stress.append(np.round(eng_stress[i]*(1 + x/100), decimals=5))
         i += 1
 
-    eng_stress = eng_stress[:eng_UTS_index]
-    eng_strain = eng_strain[:eng_UTS_index]
+    eng_stress = eng_stress[:eng_UTS_index+1]
+    eng_strain = eng_strain[:eng_UTS_index+1]
     real_UTS_index = real_stress.index(max(real_stress))
-    real_stress = real_stress[:real_UTS_index]
-    real_strain = real_strain[:real_UTS_index]
-
+    real_stress = real_stress[:real_UTS_index + 1]
+    real_strain = real_strain[:real_UTS_index + 1]
 
 
     l2_1, = plt.plot(eng_strain, eng_stress)
@@ -203,13 +202,13 @@ if __name__ == '__main__':
     plt.plot(real_strain[-1], real_stress[-1], 'ro')
 
     plt.annotate('                  True-stress-strain\n'
-                 'UTS:(%s, %s)' % (real_strain[-1], real_stress[-1]), xy=(real_strain[-1], real_stress[-1]),
-                 xytext=(-170, -40),textcoords='offset pixels')
+                 'UTS:(%s, %s)' % (np.round(real_strain[-1],decimals=5), np.round(real_stress[-1],decimals=5)),
+                 xy=(real_strain[-1], real_stress[-1]),xytext=(-170, -40),textcoords='offset pixels')
 
     plt.legend(handles=[l2_1, l1_2], labels=['engineering-\n'
                                              'stress-strain',
                                              'real-\n'
-                                             'stress-strain'], loc='upper left')
+                                             'stress-strain'], loc='lower right')
 
 
     plt.show()
